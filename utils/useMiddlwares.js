@@ -18,11 +18,11 @@ const useMiddlewares = (app) => {
   const useExpressSession = require("../middlewares/express-session");
   useExpressSession(app);
 
-  // Middleware to serve static files
-  app.use(express.static(path.join(__dirname, "../client", "dist")));
-
   // Configuring Passport
   const usePassport = require("../middlewares/passport");
+
+  // Middleware to serve static files
+  app.use(express.static(path.join(__dirname, "../client", "dist")));
   usePassport(app);
 };
 
