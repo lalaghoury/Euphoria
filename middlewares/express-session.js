@@ -9,7 +9,7 @@ const useExpressSession = (app) => {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        sameSite: "strict",
+        sameSite: "None",
         secure: true,
       },
       store: MongoStore.create({
