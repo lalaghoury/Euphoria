@@ -41,7 +41,9 @@ export const useAuthActions = () => {
 
   const signout = async () => {
     try {
-      const { data } = await axios.post(`${"https://euphoria-six.vercel.app/api"}/auth/signout`);
+      const { data } = await axios.post(
+        `${"https://euphoria-six.vercel.app/api"}/auth/signout`
+      );
       if (data.success) {
         message.success(data.message, 1, () => {
           dispatch(signoutAction());
