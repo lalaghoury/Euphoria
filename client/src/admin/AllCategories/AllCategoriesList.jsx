@@ -71,7 +71,7 @@ const AllCategoriesList = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/categories/all`
+          `${"https://euphoria-six.vercel.app/api"}/categories/all`
         );
         if (response.data.success) {
           setCategories(response.data.categories.reverse());

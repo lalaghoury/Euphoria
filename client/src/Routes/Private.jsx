@@ -17,7 +17,7 @@ export default function PrivateRoute() {
   useEffect(() => {
     const verifyLogin = async () => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/auth/verify`, {
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/auth/verify`, {
           withCredentials: true,
         });
         if (data.success) {

@@ -14,11 +14,11 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   function discordSignIn() {
-    window.location.href = `${process.env.API_URL}/auth/discord`;
+    window.location.href = `${"https://euphoria-six.vercel.app/api"}/auth/discord`;
   }
 
   function googleSignIn() {
-    window.location.href = `${process.env.API_URL}/auth/google`;
+    window.location.href = `${"https://euphoria-six.vercel.app/api"}/auth/google`;
   }
 
   const onFinish = async (values) => {
@@ -28,7 +28,7 @@ const SignUpPage = () => {
     try {
       setIsSubmitting(true);
       const response = await axios.post(
-        `${process.env.API_URL}/auth/signup`,
+        `${"https://euphoria-six.vercel.app/api"}/auth/signup`,
         values
       );
       const data = response.data;

@@ -19,7 +19,7 @@ export const cartThunks = {
       { rejectWithValue }
     ) => {
       try {
-        const { data } = await axios.post(`${process.env.API_URL}/cart/add`, {
+        const { data } = await axios.post(`${"https://euphoria-six.vercel.app/api"}/cart/add`, {
           productId,
           quantity,
           price,
@@ -43,7 +43,7 @@ export const cartThunks = {
     "cart/fetchCartItems",
     async (_, { rejectWithValue }) => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/cart/my-cart`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/cart/my-cart`);
         if (data.success) {
           return data.cart;
         }
@@ -57,7 +57,7 @@ export const cartThunks = {
     "cart/updateQuantity",
     async ({ productId, quantity, price }, { rejectWithValue }) => {
       try {
-        const { data } = await axios.put(`${process.env.API_URL}/cart/update`, {
+        const { data } = await axios.put(`${"https://euphoria-six.vercel.app/api"}/cart/update`, {
           productId,
           quantity,
           price,
@@ -77,7 +77,7 @@ export const cartThunks = {
     async (itemId, { rejectWithValue }) => {
       try {
         const { data } = await axios.delete(
-          `${process.env.API_URL}/cart/remove/${itemId}`
+          `${"https://euphoria-six.vercel.app/api"}/cart/remove/${itemId}`
         );
         if (data.success) {
           message.success(data.message);
@@ -94,7 +94,7 @@ export const cartThunks = {
     async (couponCode, { dispatch, rejectWithValue }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.API_URL}/coupon/apply-coupon`,
+          `${"https://euphoria-six.vercel.app/api"}/coupon/apply-coupon`,
           {
             couponCode,
           }
@@ -118,7 +118,7 @@ export const cartThunks = {
     ) => {
       try {
         const { data } = await axios.post(
-          `${process.env.API_URL}/checkout/payment`,
+          `${"https://euphoria-six.vercel.app/api"}/checkout/payment`,
           {
             nonce,
             amount,
@@ -143,7 +143,7 @@ export const cartThunks = {
     async (_, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/cart/user-cart-count`
+          `${"https://euphoria-six.vercel.app/api"}/cart/user-cart-count`
         );
         if (data.success) {
           return data.count;

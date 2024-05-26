@@ -19,7 +19,7 @@ export const useAuthActions = () => {
   const signin = async (values) => {
     try {
       const { data } = await axios.post(
-        `${process.env.API_URL}/auth/signin`,
+        `${"https://euphoria-six.vercel.app/api"}/auth/signin`,
         values
       );
       if (data.success) {
@@ -41,7 +41,7 @@ export const useAuthActions = () => {
 
   const signout = async () => {
     try {
-      const { data } = await axios.post(`${process.env.API_URL}/auth/signout`);
+      const { data } = await axios.post(`${"https://euphoria-six.vercel.app/api"}/auth/signout`);
       if (data.success) {
         message.success(data.message, 1, () => {
           dispatch(signoutAction());
@@ -62,7 +62,7 @@ export const authThunks = {
     async (_, { dispatch, rejectWithValue }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.API_URL}/auth/signout`
+          `${"https://euphoria-six.vercel.app/api"}/auth/signout`
         );
         if (data.success) {
           message.success(data.message, 1, () => {

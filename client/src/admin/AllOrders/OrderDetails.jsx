@@ -11,7 +11,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/orders/${id}`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/orders/${id}`);
         if (data.success) setOrder(data.order);
       } catch (error) {
         console.log(error.response.data.message);

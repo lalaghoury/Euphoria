@@ -26,11 +26,11 @@ const SignInPage = () => {
   }, []);
 
   function discordSignIn() {
-    window.location.href = `${process.env.API_URL}/auth/discord`;
+    window.location.href = `${"https://euphoria-six.vercel.app/api"}/auth/discord`;
   }
 
   function googleSignIn() {
-    window.location.href = `${process.env.API_URL}/auth/google`;
+    window.location.href = `${"https://euphoria-six.vercel.app/api"}/auth/google`;
   }
 
   const onFinish = async (values) => {

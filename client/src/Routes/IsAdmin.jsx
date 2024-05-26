@@ -16,7 +16,7 @@ export default function IsAdmin() {
     const verifyLogin = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/auth/verify/admin`
+          `${"https://euphoria-six.vercel.app/api"}/auth/verify/admin`
         );
         if (data.success) {
           dispatch(signin({ user: data.user }));

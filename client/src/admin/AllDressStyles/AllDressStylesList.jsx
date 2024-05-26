@@ -72,7 +72,7 @@ const AllDressStylesList = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/dress-styles/all`
+          `${"https://euphoria-six.vercel.app/api"}/dress-styles/all`
         );
         if (response.data.success) {
           setDressStyles(response.data.DressStyles.reverse());

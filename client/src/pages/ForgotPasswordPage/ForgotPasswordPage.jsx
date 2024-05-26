@@ -17,7 +17,7 @@ const ForgotPasswordPage = () => {
       setLoading(true);
       const { email } = values;
       const { data } = await axios.post(
-        `${process.env.API_URL}/auth/send-verification-link`,
+        `${"https://euphoria-six.vercel.app/api"}/auth/send-verification-link`,
         { email }
       );
       if (data.success) {

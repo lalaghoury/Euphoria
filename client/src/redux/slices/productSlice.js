@@ -15,7 +15,7 @@ export const productThunks = {
     "products/getAllProducts",
     async (_, { rejectWithValue }) => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/products/all`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/products/all`);
         if (data.success) {
           return data.products;
         }
@@ -30,7 +30,7 @@ export const productThunks = {
     async ({ values, productId }, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/products/edit/${productId}`,
+          `${"https://euphoria-six.vercel.app/api"}/products/edit/${productId}`,
           values
         );
         if (data.success) {
@@ -48,7 +48,7 @@ export const productThunks = {
     async (values, { rejectWithValue }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.API_URL}/products/new`,
+          `${"https://euphoria-six.vercel.app/api"}/products/new`,
           values
         );
 
@@ -67,7 +67,7 @@ export const productThunks = {
     async (_, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/products/user-wishlist`
+          `${"https://euphoria-six.vercel.app/api"}/products/user-wishlist`
         );
         if (data.success) {
           return data.products;
@@ -83,7 +83,7 @@ export const productThunks = {
     async (query, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/products/filter?query=${query}`
+          `${"https://euphoria-six.vercel.app/api"}/products/filter?query=${query}`
         );
         if (data.success) {
           return data.products;

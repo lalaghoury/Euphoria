@@ -12,23 +12,22 @@ const AddDressStyle = () => {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    console.log("🚀 ~ onFinish ~ values:", values);
-    // setLoading(true);
-    // try {
-    //   const { data } = await axios.post(
-    //     `${process.env.API_URL}/dress-styles/new`,
-    //     { ...values, image: values.images[0].url }
-    //   );
-    //   if (data.success) {
-    //     message.success(data.message);
-    //     navigate("/dashboard/dress-styles/dress-styles-list");
-    //   }
-    // } catch (error) {
-    //   console.log("Error in Adding Dress Style", error.response.data.message);
-    //   message.error(error.response.data.message);
-    // } finally {
-    //   setLoading(false);
-    // }
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        `${"https://euphoria-six.vercel.app/api"}/dress-styles/new`,
+        { ...values, image: values.images[0].url }
+      );
+      if (data.success) {
+        message.success(data.message);
+        navigate("/dashboard/dress-styles/dress-styles-list");
+      }
+    } catch (error) {
+      console.log("Error in Adding Dress Style", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCancel = () => {

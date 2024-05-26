@@ -60,13 +60,13 @@ const AddProduct = () => {
     const fetchData = async () => {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.API_URL}/categories/names`
+        `${"https://euphoria-six.vercel.app/api"}/categories/names`
       );
       if (response.data.success) {
         setCategoriesNames(response.data.categoriesNames);
       }
       const response2 = await axios.get(
-        `${process.env.API_URL}/dress-styles/names`
+        `${"https://euphoria-six.vercel.app/api"}/dress-styles/names`
       );
       if (response2.data.success) {
         setDressStyleNames(response2.data.DressStylesNames);
@@ -94,7 +94,7 @@ const AddProduct = () => {
         message.info("Please select a thumbnail");
         return;
       }
-      const { data } = await axios.post(`${process.env.API_URL}/products/new`, {
+      const { data } = await axios.post(`${"https://euphoria-six.vercel.app/api"}/products/new`, {
         ...values,
         thumbnail: selectedThumbnail,
       });
@@ -547,7 +547,7 @@ export const ImageInput = ({
 
     try {
       const { data } = await axios.post(
-        `${process.env.API_URL}/images`,
+        `${"https://euphoria-six.vercel.app/api"}/images`,
         formData
       );
       if (data.success) {

@@ -17,7 +17,7 @@ export const userThunks = {
     async (_, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/users/admin/all`
+          `${"https://euphoria-six.vercel.app/api"}/users/admin/all`
         );
         if (data.success) {
           return data.users;
@@ -33,7 +33,7 @@ export const userThunks = {
     async ({ values, url }, { dispatch, rejectWithValue }) => {
       try {
         const { data } = await axios.put(
-          `${process.env.API_URL}${url}`,
+          `${"https://euphoria-six.vercel.app/api"}${url}`,
           values
         );
         if (data.success) {
@@ -50,7 +50,7 @@ export const userThunks = {
     "user/deleteUser",
     async ({ url }, { rejectWithValue }) => {
       try {
-        const { data } = await axios.delete(`${process.env.API_URL}${url}`);
+        const { data } = await axios.delete(`${"https://euphoria-six.vercel.app/api"}${url}`);
         if (data.success) {
           message.success(data.message);
           return data.user._id;

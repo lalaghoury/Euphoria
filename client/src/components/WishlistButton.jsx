@@ -35,7 +35,7 @@ const WishlistButton = ({ wishlists, productId }) => {
 
     try {
       setLoading(true);
-      const endpoint = `${process.env.API_URL}/products/${action}/${productId}`;
+      const endpoint = `${"https://euphoria-six.vercel.app/api"}/products/${action}/${productId}`;
       const { data } = await axios.post(endpoint);
       if (data.success) {
         dispatch(updateWishlistCount(data.count));

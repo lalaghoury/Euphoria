@@ -11,7 +11,7 @@ const AllProductsList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`${process.env.API_URL}/products/all`);
+      const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/products/all`);
       if (data.success) {
         setProducts(data.products);
       }

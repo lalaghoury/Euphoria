@@ -43,10 +43,10 @@ const Shop = () => {
     const fetchData = async () => {
       try {
         const categoriesResponse = await axios.get(
-          `${process.env.API_URL}/categories/names`
+          `${"https://euphoria-six.vercel.app/api"}/categories/names`
         );
         const dressStylesResponse = await axios.get(
-          `${process.env.API_URL}/dress-styles/names`
+          `${"https://euphoria-six.vercel.app/api"}/dress-styles/names`
         );
 
         setCategoriesNames(categoriesResponse.data.categoriesNames);
@@ -91,7 +91,7 @@ const Shop = () => {
         try {
           setLoading(true);
           const { data } = await axios.get(
-            `${process.env.API_URL}/products/filter`,
+            `${"https://euphoria-six.vercel.app/api"}/products/filter`,
             {
               params: {
                 minPrice,

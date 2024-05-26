@@ -76,7 +76,7 @@ const ProductDetails = () => {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `${process.env.API_URL}/products/single/${productId}`
+          `${"https://euphoria-six.vercel.app/api"}/products/single/${productId}`
         );
         if (data.success) {
           setProduct(data.product);

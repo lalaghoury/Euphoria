@@ -8,7 +8,7 @@ const CategoryDetails = () => {
   return (
     <div>
       <CardShortHand
-        apiUrl={`${process.env.API_URL}/categories/details/${categoryName}`}
+        apiUrl={`${"https://euphoria-six.vercel.app/api"}/categories/details/${categoryName}`}
         text={categoryName}
       />
     </div>

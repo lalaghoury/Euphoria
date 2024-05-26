@@ -16,7 +16,7 @@ export const addressThunks = {
     async ({ values, url }, { rejectWithValue }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.API_URL}${url}`,
+          `${"https://euphoria-six.vercel.app/api"}${url}`,
           values
         );
         if (data.success) {
@@ -33,7 +33,7 @@ export const addressThunks = {
     "address/deleteAddress",
     async ({ url }, { rejectWithValue }) => {
       try {
-        const { data } = await axios.delete(`${process.env.API_URL}${url}`);
+        const { data } = await axios.delete(`${"https://euphoria-six.vercel.app/api"}${url}`);
         if (data.success) {
           message.success(data.message);
           return data.address._id;
@@ -49,7 +49,7 @@ export const addressThunks = {
     async ({ values, url }, { rejectWithValue }) => {
       try {
         const { data } = await axios.put(
-          `${process.env.API_URL}${url}`,
+          `${"https://euphoria-six.vercel.app/api"}${url}`,
           values
         );
         if (data.success) {
@@ -66,7 +66,7 @@ export const addressThunks = {
     "address/getAddress",
     async (_, { rejectWithValue }) => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/address`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/address`);
         if (data.success) {
           return data.addresses;
         }

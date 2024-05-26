@@ -13,7 +13,7 @@ const LoginSuccess = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/auth/verify`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/auth/verify`);
         if (data.success) {
           dispatch(signin({ user: data.user }));
           window.location.href = "/";

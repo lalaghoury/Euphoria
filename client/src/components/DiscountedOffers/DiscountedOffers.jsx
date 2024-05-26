@@ -6,7 +6,7 @@ const DiscountedOffers = () => {
     <CardShortHand
       text={"Big Saving Zone"}
       url={"/discounted-offers"}
-      apiUrl={`${process.env.API_URL}/products/all`}
+      apiUrl={`${"https://euphoria-six.vercel.app/api"}/products/all`}
       width={282}
       height={370}
       color={"#f5f5f5"}

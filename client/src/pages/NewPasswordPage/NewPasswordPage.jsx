@@ -20,7 +20,7 @@ const NewPasswordPage = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${process.env.API_URL}/auth/reset-password/${resetToken}`,
+        `${"https://euphoria-six.vercel.app/api"}/auth/reset-password/${resetToken}`,
         { password }
       );
       const data = await response.data;

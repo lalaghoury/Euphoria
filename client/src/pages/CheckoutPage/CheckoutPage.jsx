@@ -44,7 +44,7 @@ const CheckoutPage = () => {
     const getToken = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/checkout/token`
+          `${"https://euphoria-six.vercel.app/api"}/checkout/token`
         );
         if (data.success) {
           setClientToken(data.clientToken);

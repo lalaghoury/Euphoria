@@ -16,7 +16,7 @@ export const orderThunks = {
     async (_, { rejectWithValue }) => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_URL}/orders/my-orders`
+          `${"https://euphoria-six.vercel.app/api"}/orders/my-orders`
         );
         if (data.success) {
           return data.orders;
@@ -31,7 +31,7 @@ export const orderThunks = {
     "orders/getAllOrders",
     async (_, { rejectWithValue }) => {
       try {
-        const { data } = await axios.get(`${process.env.API_URL}/orders/admin/all`);
+        const { data } = await axios.get(`${"https://euphoria-six.vercel.app/api"}/orders/admin/all`);
         if (data.success) {
           return data.orders;
         }
@@ -46,7 +46,7 @@ export const orderThunks = {
     async ({ id, status }, { rejectWithValue }) => {
       try {
         const { data } = await axios.put(
-          `${process.env.API_URL}/orders/update/${id}`,
+          `${"https://euphoria-six.vercel.app/api"}/orders/update/${id}`,
           { status }
         );
         if (data.success) {
