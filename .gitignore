@@ -1,5 +1,13 @@
 .env
 package-lock.json
+gitattributes
 node_modules
-.gitattributes
-dist
+
+client/src
+client/public
+client/.eslintrc.cjs
+client/postcss.config.js
+client/tailwind.config.js
+client/vite.config.js
+client/package.json
+client/index.html
